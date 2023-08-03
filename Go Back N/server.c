@@ -5,9 +5,9 @@ main(){
 	int sockfd, newsockfd, clilen, g = 0, n, m, p = 0, f = -1,k;
 	char ca = 'a', can = 'c', ch;
 	struct sockaddr_in serv_addr, cli_addr;
-	serv_addr.sin_family = PF_INET;
-	serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-	serv_addr.sin_port = htons(8084);
+	serv_addr.sin_family = AF_INET;
+	serv_addr.sin_addr.s_addr = INADDR_ANY;
+	serv_addr.sin_port = 8084;
 	sockfd = socket(PF_INET,SOCK_STREAM,0);
 	bind(sockfd,(struct sockaddr*)&serv_addr,sizeof(serv_addr));
 	listen(sockfd,5);

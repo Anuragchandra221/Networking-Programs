@@ -9,7 +9,7 @@ int main()
 	struct sockaddr_in server,client;
 	int len = sizeof(client);
 	server.sin_family = AF_INET;
-	server.sin_port = 8888;
+	server.sin_port = 8000;
 	server.sin_addr.s_addr = INADDR_ANY;
 	int sockfd = socket(AF_INET,SOCK_STREAM,0);
 	bind(sockfd,(struct sockaddr*)&server,sizeof(server));

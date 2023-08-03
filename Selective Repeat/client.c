@@ -42,7 +42,7 @@ int main()
 	sockfd = socket(AF_INET,SOCK_STREAM,0);
 	struct sockaddr_in server;
 	server.sin_family = AF_INET;
-	server.sin_port = 8888;
+	server.sin_port = 8000;
 	server.sin_addr.s_addr = INADDR_ANY;
 	connect(sockfd,(struct sockaddr*)&server,sizeof(server));
 	pthread_create(&s,0,senddata,0);

@@ -2,14 +2,14 @@
 #include<string.h>
 #include<netdb.h>
 int main(){
-	int sockfd,n,m;
+	struct sockaddr_in client;
+	int sockfd, n, m;
 	char buf[2040];
-	struct sockaddr_in server;
-	server.sin_family = AF_INET;
-	server.sin_addr.s_addr = INADDR_ANY;
-	server.sin_port=htons(6034);
-	sockfd = socket(AF_INET,SOCK_STREAM,0);
-	connect(sockfd,(struct sockaddr*)&server,sizeof(server));
+	sockfd = socket(AF_INET, SOCK_STREAM, 0);
+	client.sin_family = AF_INET;
+	client.sin_port = htons(6034);
+	client.sin_addr.s_addr = INADDR_ANY;
+	connect(sockfd, (struct sockaddr*)&client, sizeof(client));
 	printf("Server connected\n");
 	if(fork()==0){
 		while(1){

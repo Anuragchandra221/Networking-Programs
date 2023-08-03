@@ -15,7 +15,7 @@ int main(){
 		exit(1);
 	}
 	server.sin_family = AF_INET;
-	server.sin_port = 3002;
+	server.sin_port = 3000;
 	server.sin_addr.s_addr = INADDR_ANY;
 	k = bind(sockfd,(struct sockaddr*)&server,sizeof(server));
 	if(k == -1){

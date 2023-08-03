@@ -32,9 +32,9 @@ void* receivedata(){
 main(){
 	pthread_t s,r;
 	struct sockaddr_in cliaddr;
-	cliaddr.sin_family=PF_INET;
-	cliaddr.sin_addr.s_addr=inet_addr("127.0.0.1");
-	cliaddr.sin_port=htons(8084);
+	cliaddr.sin_family=AF_INET;
+	cliaddr.sin_addr.s_addr= INADDR_ANY;
+	cliaddr.sin_port= 8084;
 	sockfd=socket(PF_INET,SOCK_STREAM,0);
 	connect(sockfd,(struct sockaddr*)&cliaddr,sizeof(cliaddr));
 	printf("Connecting to server.......\n");
